@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPropogation</title>
+    <style>
+        body {
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .outerContainer {
+            border: 3px solid darkblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+            height: 40vh;
+            width: 40%;
+            margin-top: 20vh;
+        }
+        
+        .innerContainer {
+            border: 3px solid darkgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            width: 40%;
+            margin-top: 10vh;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outerContainer" id="outerContainer">
+        <div class="innerContainer" id="innerContainer">
+
+        </div>
+    </div>
+    <script>
+        const parentCall = () => {
+            alert("Parent Call");
+        }
+        const childCall = () => {
+            alert("Child Call");
+            event.stopPropagation();
+        }
+
+        const parentDiv = document.getElementById("outerContainer")
+        const childDiv = document.getElementById("innerContainer")
+
+        // for bottom to top Event Propogation
+        // parentDiv.addEventListener('click', parentCall)
+        // childDiv.addEventListener('click', childCall)
+
+        // for top to bottom event propogation
+        // parentDiv.addEventListener('click', parentCall, true)
+        // childDiv.addEventListener('click', childCall, true)
+
+        //if you want to run only child component when on click to child then uncomment line 53
+        parentDiv.addEventListener('click', parentCall)
+        childDiv.addEventListener('click', childCall)
+    </script>
+
+</body>
+
+</html>
