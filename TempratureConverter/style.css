@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 168, 188);
+}
+
+.container {
+    margin-top: 30vh;
+}
+
+.card-custom {
+    width: 40%;
+    margin: auto;
+    padding: 20px 30px;
+    height: 40vh;
+    background-color: rgb(218, 119, 124);
+    color: white;
+}
+
+input {
+    margin: 5px;
+    font-family: cursive;
+}
+
+select {
+    margin: 5px;
+    font-family: cursive;
+}
+
+button {
+    margin: 5px;
+    font-family: cursive;
+}
+
+.result {
+    margin: 5px;
+    font-family: cursive;
+    color: red;
+    font-size: 20px;
+}

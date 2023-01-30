@@ -1,0 +1,9 @@
+body {
+    background-color: aqua;
+    font-family: cursive;
+}
+
+.btn-aqua {
+    background-color: aqua;
+    color: white;
+}
